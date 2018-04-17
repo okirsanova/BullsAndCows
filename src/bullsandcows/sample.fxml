@@ -1,0 +1,49 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<BorderPane fx:controller="bullsandcows.Controller"
+            xmlns:fx="http://javafx.com/fxml">
+    <top>
+        <HBox>
+            <Spinner fx:id="num1" min="0" max="9" initialValue="5" editable="true" minWidth="60" maxWidth="100"/>
+            <Spinner fx:id="num2"  accessibleHelp="" min="0" max="9" initialValue="5" editable="true" minWidth="60" maxWidth="100"/>
+            <Spinner fx:id="num3" min="0" max="9" initialValue="5" editable="true" minWidth="60" maxWidth="100"/>
+            <Spinner fx:id="num4" min="0" max="9" initialValue="5" editable="true" minWidth="60" maxWidth="100"/>
+            <Button text="GO!" minWidth="60" onAction="#go"/>
+        </HBox>
+    </top>
+    <center>
+        <TableView fx:id="turnsTable">
+            <columns>
+        <TableColumn text="Turn #">
+            <cellValueFactory>
+                <PropertyValueFactory property="turnNR"/>
+            </cellValueFactory>
+        </TableColumn>
+            <TableColumn text="yourQuess">
+                <cellValueFactory>
+                    <PropertyValueFactory property="guess"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Bulls">
+                <cellValueFactory>
+                    <PropertyValueFactory property="bulls"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Cows">
+                <cellValueFactory>
+                    <PropertyValueFactory property="cows"/>
+                </cellValueFactory>
+            </TableColumn>
+            </columns>
+        </TableView>
+    </center>
+</BorderPane>
